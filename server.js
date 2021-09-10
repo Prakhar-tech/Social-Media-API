@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //Setting Routes
-app.get("/", () => {
+app.get("/", (req, res) => {
   res.send("Welcome To My Api");
 });
 app.use("/users", userRouter);
