@@ -16,9 +16,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //Setting Routes
+app.get("/", () => {
+  res.send("Welcome To My Api");
+});
 app.use("/users", userRouter);
 app.use("/posts", postRouter);
 
-app.listen(process.env.PORT, () => {
+const port = process.env.PORT || 7000;
+
+app.listen(port, () => {
   console.log(`Server is running`);
 });
